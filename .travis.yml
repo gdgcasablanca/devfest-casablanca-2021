@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - '16'
+
+install:
+  - npm install -g firebase-tools
+
+# safelist
+branches:
+  only:
+    - main
+    - develop
+
+jobs:
+  include:
+    - stage: build
+      script:
+        - yarn
+        - yarn build
+        - yarn export
+
+    - stage: deploy
+      script:
+        - bash scripts/deploy.sh
