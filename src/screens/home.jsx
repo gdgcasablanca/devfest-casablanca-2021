@@ -113,21 +113,21 @@ export default function HomeScreen() {
       <PageHeader />
 
       <section className='py-24'>
-        <div className='flex gap-x-12 gap-y-2 py-4 px-6 mx-auto max-w-6xl'>
-          <div className=''>
+        <div className='flex flex-wrap gap-12 justify-between py-4 px-6 mx-auto max-w-6xl'>
+          <div className='flex-shrink'>
             <h2 className='text-5xl font-bold mb-4'>
               Devfest
               <br />
               Casablanca 2021
             </h2>
-            <p className='max-w-prose text-2xl'>
+            <p className='max-w-2xl text-xl'>
               #<span className='font-bold'>devfest</span>casablanca is a
               community-run developer event happening every year focused on
               community building and learning about Google&apos;s technologies
               and IT concepts in general.
             </p>
           </div>
-          <div className='flex-grow min-w-max flex flex-col gap-y-6'>
+          <div className='md:min-w-max flex flex-col gap-y-6'>
             <div>
               <div className='inline-block px-6 py-3 mb-4 text-xl text-white font-bold bg-blue-500 rounded-full'>
                 When
@@ -146,9 +146,13 @@ export default function HomeScreen() {
 
       <section className='py-24'>
         <div className='flex flex-col gap-y-6 items-center px-6 mx-auto max-w-6xl'>
-          <h3 className='text-5xl font-bold'>Share your story with us</h3>
-          <p className='text-2xl'>Let’s connect and use these hashtags:</p>
-          <ul className='flex gap-x-8 text-2xl'>
+          <h3 className='text-5xl text-center font-bold'>
+            Share your story with us
+          </h3>
+          <p className='text-2xl text-center'>
+            Let’s connect and use these hashtags:
+          </p>
+          <ul className='flex flex-wrap justify-center gap-x-8 gap-y-4 text-2xl'>
             {hashtags.map(({ href, label }) => (
               <li key={href}>
                 <a
@@ -166,13 +170,13 @@ export default function HomeScreen() {
       </section>
 
       <footer className='py-20 bg-[#CDDFFD]'>
-        <div className='flex flex-col gap-y-32 px-6 mx-auto max-w-6xl'>
+        <div className='flex flex-col gap-32 px-6 mx-auto max-w-6xl'>
           <div>
             <div className='text-sm mb-1'>Brought to you by</div>
             <h4 className='text-3xl'>GDG & WTM Casablanca</h4>
           </div>
 
-          <div className='flex justify-between'>
+          <div className='flex flex-wrap justify-between gap-12'>
             {footerLinks.map((linksSet, index) => (
               <div key={index.toString()}>
                 <h5 className='text-xl font-bold mb-2.5'>{linksSet.title}</h5>
